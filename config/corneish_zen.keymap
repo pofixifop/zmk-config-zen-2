@@ -12,13 +12,23 @@
 
 / {
     behaviors {
-        smb: smb {
+        mo_2_3: mo_2_3 {
             compatible = "zmk,behavior-tap-dance";
-            label = "SMB";
+            label = "MO_2_3";
             #binding-cells = <0>;
             bindings =
                 <&mo 2>,
                 <&mo 3>;
+
+            tapping-term-ms = <500>;
+        };
+        mo_1_2: mo_1_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MO_1_2";
+            #binding-cells = <0>;
+            bindings =
+                <&mo 1>,
+                <&mo 2>;
 
             tapping-term-ms = <500>;
         };
@@ -44,10 +54,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-   &kp TAB        &kp SQT  &kp COMMA    &kp PERIOD  &kp P          &kp Y      &kp F      &kp G  &kp C  &kp R  &kp L          &kp SLASH
-&kp ESCAPE          &kp A      &kp O         &kp E  &kp U          &kp I      &kp D      &kp H  &kp T  &kp N  &kp S          &kp MINUS
- &kp LSHFT  &kp SEMICOLON      &kp Q         &kp J  &kp K          &kp X      &kp B      &kp M  &kp W  &kp V  &kp Z  &kp RIGHT_CONTROL
-                                      &kp LEFT_GUI  &mo 1  &kp BACKSPACE    &kp RET  &kp SPACE   &smb
+   &kp TAB        &kp SQT  &kp COMMA    &kp PERIOD    &kp P          &kp Y      &kp F      &kp G    &kp C  &kp R  &kp L          &kp SLASH
+&kp ESCAPE          &kp A      &kp O         &kp E    &kp U          &kp I      &kp D      &kp H    &kp T  &kp N  &kp S          &kp MINUS
+ &kp LSHFT  &kp SEMICOLON      &kp Q         &kp J    &kp K          &kp X      &kp B      &kp M    &kp W  &kp V  &kp Z  &kp RIGHT_CONTROL
+                                      &kp LEFT_GUI  &mo_1_2  &kp BACKSPACE    &kp RET  &kp SPACE  &mo_2_3
             >;
         };
 
@@ -78,10 +88,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-         &kp TAB      &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET   &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR   &kp BSPC
-          &trans        &trans  &trans    &trans    &trans     &trans    &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LEFT_CONTROL  &kp LEFT_ALT  &trans    &trans    &trans     &trans    &kp UNDER   &kp PLUS  &kp LBRC  &kp RBRC  &kp PIPE  &kp TILDE
-                                          &trans    &trans     &trans       &trans     &trans    &trans
+         &kp TAB      &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET   &kp AMPS       &kp STAR          &kp LPAR           &kp RPAR   &kp BSPC
+          &trans        &trans  &trans    &trans    &trans     &trans    &kp MINUS  &kp EQUAL  &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE
+&kp LEFT_CONTROL  &kp LEFT_ALT  &trans    &trans    &trans     &trans    &kp UNDER   &kp PLUS       &kp PIPE          &kp LBRC           &kp RBRC  &kp TILDE
+                                          &trans    &trans     &trans       &trans     &trans         &trans
             >;
         };
 
