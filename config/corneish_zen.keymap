@@ -43,12 +43,6 @@
     };
 
     macros {
-        password_macro: password_macro {
-            compatible = "zmk,behavior-macro";
-            label = "PASSWORD_MACRO";
-            #binding-cells = <0>;
-            bindings = <&kp H &kp E &kp L &kp L &kp O &kp RET>;
-        };
     };
 
     keymap {
