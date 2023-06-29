@@ -22,6 +22,33 @@
 
             tapping-term-ms = <500>;
         };
+        pmtd: pmtd {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PMTD";
+            #binding-cells = <0>;
+            bindings =
+                <&trans>,
+                <&trans>,
+                <&password_macro>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        pw_combo {
+            bindings = <&pmtd>;
+            key-positions = <33 22 35>;
+        };
+    };
+
+    macros {
+        password_macro: password_macro {
+            compatible = "zmk,behavior-macro";
+            label = "PASSWORD_MACRO";
+            #binding-cells = <0>;
+            bindings = <&kp H &kp E &kp L &kp L &kp O &kp RET>;
+        };
     };
 
     keymap {
