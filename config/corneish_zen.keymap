@@ -22,13 +22,33 @@
 
             tapping-term-ms = <500>;
         };
+        pmtd: pmtd {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PMTD";
+            #binding-cells = <0>;
+            bindings =
+                <&trans>,
+                <&trans>,
+                <&password_macro>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
+
+        pw_combo {
+            bindings = <&pmtd>;
+            key-positions = <33 22 35>;
+        };
     };
 
     macros {
+        password_macro: password_macro {
+            compatible = "zmk,behavior-macro";
+            label = "PASSWORD_MACRO";
+            #binding-cells = <0>;
+            bindings = <&kp H &kp E &kp L &kp L &kp O &kp RET>;
+        };
     };
 
     keymap {
@@ -61,10 +81,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &trans  &kp LA(LEFT)    &kp UP_ARROW  &kp LA(RIGHT)    &kp PAGE_UP    &kp C_VOLUME_UP        &kp N7        &kp N8        &kp N9  &trans    &kp BSPC
-&trans  &trans      &kp LEFT  &kp DOWN_ARROW      &kp RIGHT  &kp PAGE_DOWN       &kp C_VOL_DN  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &kp DELETE
-&trans  &trans        &trans          &trans         &trans         &trans         &kp K_MUTE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans      &trans
-                                      &trans         &trans         &trans             &trans  &kp NUMBER_0        &trans
+&trans  &trans     &kp LA(LEFT)    &kp UP_ARROW  &kp LA(RIGHT)    &kp PAGE_UP    &kp C_VOLUME_UP        &kp N7        &kp N8        &kp N9  &trans    &kp BSPC
+&trans  &trans         &kp LEFT  &kp DOWN_ARROW      &kp RIGHT  &kp PAGE_DOWN       &kp C_VOL_DN  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &kp DELETE
+&trans  &trans  &kp LC(LS(TAB))          &trans    &kp LC(TAB)         &trans         &kp K_MUTE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans      &trans
+                                         &trans         &trans         &trans             &trans  &kp NUMBER_0        &trans
             >;
         };
 
