@@ -22,24 +22,10 @@
 
             tapping-term-ms = <500>;
         };
-        pmtd: pmtd {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PMTD";
-            #binding-cells = <0>;
-            bindings =
-                <&trans>,
-                <&trans>,
-                <&password_macro>;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        pw_combo {
-            bindings = <&pmtd>;
-            key-positions = <33 22 35>;
-        };
     };
 
     macros {
