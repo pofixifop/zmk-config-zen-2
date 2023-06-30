@@ -72,6 +72,11 @@
             bindings = <&mo 3>;
             key-positions = <26 27>;
         };
+
+        left_numpad_combo {
+            bindings = <&mo 1>;
+            key-positions = <2 3>;
+        };
     };
 
     macros {
