@@ -23,13 +23,13 @@
 
             tapping-term-ms = <500>;
         };
-        mo_1_2: mo_1_2 {
+        mo_1_4: mo_1_4 {
             compatible = "zmk,behavior-tap-dance";
-            label = "MO_1_2";
+            label = "MO_1_4";
             #binding-cells = <0>;
             bindings =
                 <&mo 1>,
-                <&mo 2>;
+                <&mo 4>;
 
             tapping-term-ms = <500>;
         };
@@ -61,7 +61,6 @@
         new_combo {
             bindings = <&mo 2>;
             key-positions = <14 15>;
-            layers = <>;
         };
 
         new_combo {
@@ -72,6 +71,11 @@
         new_combo {
             bindings = <&mo 3>;
             key-positions = <26 27>;
+        };
+
+        new_combo {
+            bindings = <&kp LA(LG(F5))>;
+            key-positions = <19 20 21 22 40>;
         };
     };
 
@@ -141,6 +145,15 @@
             >;
 
             label = "MEDIA";
+        };
+
+        keypad {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_N7  &kp LS(KP_N8)  &kp KP_N9  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_N4      &kp KP_N5  &kp KP_N6  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp KP_N1  &kp LS(KP_N2)  &kp KP_N3  &trans  &trans
+                        &trans  &trans  &trans    &trans  &kp KP_N0      &kp KP_N0
+            >;
         };
     };
 };
