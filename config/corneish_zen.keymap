@@ -42,10 +42,37 @@
                 <&kp LEFT_CONTROL>,
                 <&kp LEFT_ALT>;
         };
+        return_symbol: return_symbol {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RETURN_SYMBOL";
+            bindings =
+                <&kp>,
+                <&mo>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
+
+        new_combo {
+            bindings = <&mo 2>;
+            key-positions = <14 15>;
+            layers = <>;
+        };
+
+        new_combo {
+            bindings = <&mo 2>;
+            key-positions = <21 20>;
+        };
+
+        new_combo {
+            bindings = <&mo 3>;
+            key-positions = <26 27>;
+        };
     };
 
     macros {
@@ -64,10 +91,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-        &kp TAB        &kp SQT  &kp COMMA    &kp PERIOD    &kp P          &kp Y      &kp F      &kp G       &kp C  &kp R  &kp L        &kp SLASH
-     &kp ESCAPE          &kp A      &kp O         &kp E    &kp U          &kp I      &kp D      &kp H       &kp T  &kp N  &kp S        &kp MINUS
-&shift_ctrl_opt  &kp SEMICOLON      &kp Q         &kp J    &kp K          &kp X      &kp B      &kp M       &kp W  &kp V  &kp Z  &shift_ctrl_opt
-                                           &kp LEFT_GUI  &mo_1_2  &kp BACKSPACE    &kp RET  &kp SPACE  &mo_2_3_pb
+        &kp TAB        &kp SQT  &kp COMMA    &kp PERIOD  &kp P          &kp Y                      &kp F      &kp G       &kp C  &kp R  &kp L        &kp SLASH
+     &kp ESCAPE          &kp A      &kp O         &kp E  &kp U          &kp I                      &kp D      &kp H       &kp T  &kp N  &kp S        &kp MINUS
+&shift_ctrl_opt  &kp SEMICOLON      &kp Q         &kp J  &kp K          &kp X                      &kp B      &kp M       &kp W  &kp V  &kp Z  &shift_ctrl_opt
+                                           &kp LEFT_GUI  &mo 1  &kp BACKSPACE    &return_symbol RETURN 2  &kp SPACE  &mo_2_3_pb
             >;
         };
 
@@ -84,7 +111,7 @@
 &trans  &trans     &kp LA(LEFT)    &kp UP_ARROW  &kp LA(RIGHT)    &kp PAGE_UP    &kp C_VOLUME_UP        &kp N7        &kp N8        &kp N9  &trans    &kp BSPC
 &trans  &trans         &kp LEFT  &kp DOWN_ARROW      &kp RIGHT  &kp PAGE_DOWN       &kp C_VOL_DN  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans  &kp DELETE
 &trans  &trans  &kp LC(LS(TAB))          &trans    &kp LC(TAB)         &trans         &kp K_MUTE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans      &trans
-                                         &trans         &trans         &trans             &trans  &kp NUMBER_0        &trans
+                                         &trans         &trans         &trans             &trans  &kp NUMBER_0  &kp NUMBER_0
             >;
         };
 
