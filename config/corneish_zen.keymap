@@ -60,7 +60,7 @@
 
         left_symbol_combo {
             bindings = <&mo 2>;
-            key-positions = <14 15>;
+            key-positions = <14>;
         };
 
         right_symbol_combo {
@@ -75,7 +75,7 @@
 
         left_numpad_combo {
             bindings = <&mo 1>;
-            key-positions = <2 3>;
+            key-positions = <3 2>;
         };
     };
 
