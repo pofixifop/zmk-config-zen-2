@@ -73,9 +73,14 @@
             key-positions = <26 27 28>;
         };
 
-        new_combo {
+        emoji_combo {
             bindings = <&kp LC(LG(SPACE))>;
             key-positions = <24 35>;
+        };
+
+        developer_tools_combo {
+            bindings = <&kp LA(LG(I))>;
+            key-positions = <0 11>;
         };
     };
 
