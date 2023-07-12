@@ -12,14 +12,14 @@
 
 / {
     behaviors {
-        mo_2_3_pb: mo_2_3_pb {
+        mo_2_3_sl: mo_2_3_sl {
             compatible = "zmk,behavior-tap-dance";
-            label = "MO_2_3_PB";
+            label = "MO_2_3_SL";
             #binding-cells = <0>;
             bindings =
                 <&mo 2>,
                 <&mo 3>,
-                <&kp PAUSE_BREAK>;
+                <&kp SCROLLLOCK>;
 
             tapping-term-ms = <500>;
         };
@@ -103,7 +103,7 @@
         &kp TAB        &kp SQT  &kp COMMA    &kp PERIOD    &kp P          &kp Y                   &kp F      &kp G       &kp C  &kp R  &kp L        &kp SLASH
      &kp ESCAPE          &kp A      &kp O         &kp E    &kp U          &kp I                   &kp D      &kp H       &kp T  &kp N  &kp S        &kp MINUS
 &shift_ctrl_opt  &kp SEMICOLON      &kp Q         &kp J    &kp K          &kp X                   &kp B      &kp M       &kp W  &kp V  &kp Z  &shift_ctrl_opt
-                                           &kp LEFT_GUI  &mo_1_4  &kp BACKSPACE    &return_symbol 2 RET  &kp SPACE  &mo_2_3_pb
+                                           &kp LEFT_GUI  &mo_1_4  &kp BACKSPACE    &return_symbol 2 RET  &kp SPACE  &mo_2_3_sl
             >;
         };
 
