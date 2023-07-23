@@ -33,15 +33,6 @@
 
             tapping-term-ms = <500>;
         };
-        shift_ctrl_opt: shift_ctrl_opt {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_CTRL_OPT";
-            #binding-cells = <0>;
-            bindings =
-                <&kp LEFT_SHIFT>,
-                <&kp LEFT_CONTROL>,
-                <&kp LEFT_ALT>;
-        };
         return_symbol: return_symbol {
             compatible = "zmk,behavior-hold-tap";
             label = "RETURN_SYMBOL";
@@ -82,6 +73,26 @@
             bindings = <&kp LA(LG(I))>;
             key-positions = <0 11>;
         };
+
+        left_ctrl_combo {
+            bindings = <&kp LCTRL>;
+            key-positions = <24 25>;
+        };
+
+        left_opt_combo {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <24 25 26>;
+        };
+
+        right_ctrl_combo {
+            bindings = <&kp RCTRL>;
+            key-positions = <35 34>;
+        };
+
+        right_opt_combo {
+            bindings = <&kp RALT>;
+            key-positions = <35 34 33>;
+        };
     };
 
     macros {
@@ -100,10 +111,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-        &kp TAB        &kp SQT  &kp COMMA    &kp PERIOD    &kp P          &kp Y                   &kp F      &kp G       &kp C  &kp R  &kp L        &kp SLASH
-     &kp ESCAPE          &kp A      &kp O         &kp E    &kp U          &kp I                   &kp D      &kp H       &kp T  &kp N  &kp S        &kp MINUS
-&shift_ctrl_opt  &kp SEMICOLON      &kp Q         &kp J    &kp K          &kp X                   &kp B      &kp M       &kp W  &kp V  &kp Z  &shift_ctrl_opt
-                                           &kp LEFT_GUI  &mo_1_4  &kp BACKSPACE    &return_symbol 2 RET  &kp SPACE  &mo_2_3_sl
+   &kp TAB        &kp SQT  &kp COMMA    &kp PERIOD    &kp P          &kp Y                   &kp F      &kp G       &kp C  &kp R  &kp L   &kp SLASH
+&kp ESCAPE          &kp A      &kp O         &kp E    &kp U          &kp I                   &kp D      &kp H       &kp T  &kp N  &kp S   &kp MINUS
+&kp LSHIFT  &kp SEMICOLON      &kp Q         &kp J    &kp K          &kp X                   &kp B      &kp M       &kp W  &kp V  &kp Z  &kp RSHIFT
+                                      &kp LEFT_GUI  &mo_1_4  &kp BACKSPACE    &return_symbol 2 RET  &kp SPACE  &mo_2_3_sl
             >;
         };
 
