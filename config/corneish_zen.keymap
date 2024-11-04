@@ -94,8 +94,8 @@
             key-positions = <24 25 26 27>;
         };
 
-        right_coffee_combo {
-            bindings = <&kp C_AL_COFFEE>;
+        right_app_combo {
+            bindings = <&kp K_APP>;
             key-positions = <35 34 33 32>;
         };
     };
