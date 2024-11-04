@@ -93,6 +93,11 @@
             bindings = <&kp GLOBE>;
             key-positions = <24 25 26 27>;
         };
+
+        right_mic_combo {
+            bindings = <&kp C_MUTE>;
+            key-positions = <35 34 33 32>;
+        };
     };
 
     keymap {
