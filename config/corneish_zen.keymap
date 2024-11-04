@@ -94,8 +94,8 @@
             key-positions = <24 25 26 27>;
         };
 
-        right_mic_combo {
-            bindings = <&kp C_MUTE>;
+        right_coffee_combo {
+            bindings = <&kp C_AL_COFFEE>;
             key-positions = <35 34 33 32>;
         };
     };
