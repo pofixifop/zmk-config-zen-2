@@ -12,11 +12,11 @@
 
 / {
     behaviors {
-        mo_2_3_sl: mo_2_3_sl {
+        mo_3_sl: mo_3_sl {
             compatible = "zmk,behavior-tap-dance";
-            label = "MO_2_3_SL";
+            label = "MO_3_SL";
             #binding-cells = <0>;
-            bindings = <&mo 2>, <&mo 3>, <&kp SCROLLLOCK>;
+            bindings = <&mo 3>, <&kp SCROLLLOCK>;
 
             tapping-term-ms = <500>;
         };
@@ -38,6 +38,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
+        };
+
+        mo_f21_f22: mo_f21_f22 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MO_F21_F22";
+            #binding-cells = <0>;
+            bindings = <&kp F21>, <&kp F22>;
+
+            tapping-term-ms = <500>;
         };
     };
 
@@ -95,7 +104,7 @@
         };
 
         right_app_combo {
-            bindings = <&kp K_APP>;
+            bindings = <&mo_f21_f22>;
             key-positions = <35 34 33 32>;
         };
     };
@@ -113,10 +122,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB     &kp SQT        &kp COMMA  &kp PERIOD    &kp P    &kp Y            &kp F                 &kp G      &kp C       &kp R  &kp L  &kp SLASH
-&kp ESCAPE  &kp A          &kp O      &kp E         &kp U    &kp I            &kp D                 &kp H      &kp T       &kp N  &kp S  &kp MINUS
-&kp LSHIFT  &kp SEMICOLON  &kp Q      &kp J         &kp K    &kp X            &kp B                 &kp M      &kp W       &kp V  &kp Z  &kp RSHIFT
-                                      &kp LEFT_GUI  &mo_1_4  &kp BACKSPACE    &return_symbol 2 RET  &kp SPACE  &mo_2_3_sl
+&kp TAB     &kp SQT        &kp COMMA  &kp PERIOD    &kp P    &kp Y            &kp F                 &kp G      &kp C     &kp R  &kp L  &kp SLASH
+&kp ESCAPE  &kp A          &kp O      &kp E         &kp U    &kp I            &kp D                 &kp H      &kp T     &kp N  &kp S  &kp MINUS
+&kp LSHIFT  &kp SEMICOLON  &kp Q      &kp J         &kp K    &kp X            &kp B                 &kp M      &kp W     &kp V  &kp Z  &kp RSHIFT
+                                      &kp LEFT_GUI  &mo_1_4  &kp BACKSPACE    &return_symbol 2 RET  &kp SPACE  &mo_3_sl
             >;
         };
 
