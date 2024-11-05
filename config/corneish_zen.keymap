@@ -40,11 +40,11 @@
             quick-tap-ms = <200>;
         };
 
-        mo_f21_f22: mo_f21_f22 {
+        mo_f17_f18: mo_f17_f18 {
             compatible = "zmk,behavior-tap-dance";
-            label = "MO_F21_F22";
+            label = "MO_F17_F18";
             #binding-cells = <0>;
-            bindings = <&kp F21>, <&kp F22>;
+            bindings = <&kp F17>, <&kp F18>;
 
             tapping-term-ms = <500>;
         };
@@ -104,7 +104,7 @@
         };
 
         right_app_combo {
-            bindings = <&mo_f21_f22>;
+            bindings = <&mo_f17_f18>;
             key-positions = <35 34 33 32>;
         };
     };
